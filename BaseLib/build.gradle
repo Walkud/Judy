@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            def dirs = ['p_share', 'p_pay', 'p_log']
+            dirs.each { dir ->
+                java.srcDir("src/$dir/java")
+                res.srcDir("src/$dir/res")
+            }
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api rootProject.ext.dependencies['appcompat-v7']
+    api rootProject.ext.dependencies['design']
+    //RxJava
+    api rootProject.ext.dependencies['rxjava']
+    api rootProject.ext.dependencies['rxandroid']
+    api rootProject.ext.dependencies['rxlifecycle']
+    api rootProject.ext.dependencies['rxlifecycle-android']
+    api rootProject.ext.dependencies['rxlifecycle-cmt']
+    //网络请求库
+    api rootProject.ext.dependencies['retrofit']
+    api rootProject.ext.dependencies['converter-gson']
+    api rootProject.ext.dependencies['adapter-rxjava']
+    //OkHttp日志拦截器
+    api rootProject.ext.dependencies['log-interceptor']
+    //运行时权限注解处理
+    annotationProcessor rootProject.ext.dependencies['permission-compiler']
+    //运行时权限
+    api rootProject.ext.dependencies['mpermission-api']
+    //图片加载库
+    api rootProject.ext.dependencies['glide']
+    annotationProcessor rootProject.ext.dependencies['glide-compiler']
+    //GreenDao数据库
+    api rootProject.ext.dependencies['greendao']
+    //Logcat日志格式化库
+    api rootProject.ext.dependencies['klog']
+    //facebook出品的Android调试库
+    debugApi rootProject.ext.dependencies['stetho']
+    debugApi rootProject.ext.dependencies['stetho-okhttp3']
+    //下拉刷新、上拉加View载库
+    api rootProject.ext.dependencies['smartrefresh']
+    //recyclerview分割线
+    api rootProject.ext.dependencies['rv-flexibledivider']
+    //简化Adapter库
+    api rootProject.ext.dependencies['base-adapter']
+    //ButterKnife
+    api rootProject.ext.dependencies['butterknife']
+    annotationProcessor rootProject.ext.dependencies['butterknife-compiler']
+    //滑动返回库
+    api rootProject.ext.dependencies['swipebacklayout']
+    //沉侵式库
+    api rootProject.ext.dependencies['statusbarutil']
+    //友盟统计
+    api rootProject.ext.dependencies['umeng-analytics']
+    //SharedPreference对象化库
+    api rootProject.ext.dependencies['smart-sp']
+    annotationProcessor rootProject.ext.dependencies['smart-sp-compiler']
+}
