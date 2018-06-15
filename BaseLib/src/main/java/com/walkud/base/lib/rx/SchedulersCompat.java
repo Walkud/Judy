@@ -1,10 +1,5 @@
 package com.walkud.base.lib.rx;
 
-
-import android.content.Context;
-
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
@@ -84,29 +79,5 @@ public class SchedulersCompat {
     public static <T> ObservableTransformer<T, T> applyExecutorSchedulers() {
 
         return (ObservableTransformer<T, T>) executorTransformer;
-    }
-
-    /**
-     * 网络请求ObservableTransformer
-     * @param <T>
-     * @return
-     */
-    public static <T> ObservableTransformer<T, T> applyNetSchedulers() {
-        return new NetTransformer<>();
-    }
-
-    /**
-     * 进度事务
-     *
-     * @param context
-     * @param obj
-     * @param <T>
-     * @return
-     */
-    public static <T> ObservableTransformer<T, T> progressSchedulers(Context context, Object obj) {
-        if (obj instanceof SmartRefreshLayout) {
-            return new SmartRefreshTransformer<>((SmartRefreshLayout) obj);
-        }
-        return new ProgressTransformer<>(context);
     }
 }

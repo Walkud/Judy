@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/BaseRes/BaseRes.iml" filepath="$PROJECT_DIR$/BaseRes/BaseRes.iml" />
       <module fileurl="file://$PROJECT_DIR$/WalkudAndroid.iml" filepath="$PROJECT_DIR$/WalkudAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bundle_a/bundle_a.iml" filepath="$PROJECT_DIR$/bundle_a/bundle_a.iml" />
     </modules>
   </component>
 </project>

@@ -1,10 +1,12 @@
-apply plugin: 'com.android.library'
+apply from: rootProject.file('zconfig/judy.gradle')
 
 android {
-
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileSdkVersion 28
 
     defaultConfig {
+        if (project.ext.appPlugin) {
+            applicationId "app.walkud.com.bundle_a"
+        }
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -21,7 +23,6 @@ android {
 }
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':BaseLib')//基础库
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(':BaseRes')
 }

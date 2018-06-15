@@ -1,0 +1,33 @@
+//先加载local.properties文件
+Properties localProperties = new Properties()
+try {
+    def localFile = project.rootProject.file('local.properties')
+    if (localFile != null && localFile.exists()) {
+        localProperties.load(localFile.newDataInputStream())
+    }
+} catch (Exception ignored) {
+    println("local.properties not found")
+}
+
+//当前模块是否独立运行
+def appPlugin = "true" == localProperties.getProperty(project.name)
+ext.appPlugin = appPlugin
+
+//本地属性文件独立运行模块配置
+if (appPlugin) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+//配置独立运行模式下代码及资源路径等
+android {
+    sourceSets {
+        main {
+            if (appPlugin) {
+                //独立运行模式，指定debugRoot路径
+                sourceSets.debug.setRoot('src/main/debug')
+            }
+        }
+    }
+}

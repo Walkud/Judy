@@ -1,44 +1,11 @@
 package com.walkud.base.lib.network;
 
-import android.content.Context;
-import android.text.TextUtils;
-
-import com.facebook.stetho.Stetho;
-import com.facebook.stetho.okhttp3.StethoInterceptor;
-import com.socks.library.KLog;
-import com.walkud.base.lib.BuildConfig;
-import com.walkud.base.lib.config.Config;
-import com.walkud.base.lib.utils.AppContextUtil;
-import com.walkud.base.lib.utils.NetUtil;
 import com.walkud.base.lib.utils.gson.GsonUtil;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
-import okhttp3.Cache;
-import okhttp3.CacheControl;
-import okhttp3.FormBody;
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
-import okhttp3.ResponseBody;
-import okhttp3.logging.HttpLoggingInterceptor;
-import okio.Buffer;
-import okio.BufferedSource;
 import retrofit2.CallAdapter;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
@@ -92,7 +59,7 @@ public class RetrofitManager {
         }
 
         if (config.adapterFactories.isEmpty()) {
-            config.adapterFactories.add(RxJava2CallAdapterFactory.create());
+            config.adapterFactories.add(RxJavaCallAdapterFactory.create());
         }
 
         if (config.converterFactories.isEmpty()) {
