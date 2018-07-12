@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    compileSdkVersion Integer.parseInt(compileSdk)
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion Integer.parseInt(minSdk)
+        targetSdkVersion Integer.parseInt(targetSdk)
+        versionCode 1
+        versionName "1.0.0"
     }
 
     buildTypes {
@@ -46,12 +46,12 @@ dependencies {
     //OkHttp日志拦截器
     api rootProject.ext.dependencies['log-interceptor']
     //运行时权限注解处理
-    annotationProcessor rootProject.ext.dependencies['permission-compiler']
+//    annotationProcessor rootProject.ext.dependencies['permission-compiler']
     //运行时权限
     api rootProject.ext.dependencies['mpermission-api']
     //图片加载库
     api rootProject.ext.dependencies['glide']
-    annotationProcessor rootProject.ext.dependencies['glide-compiler']
+//    annotationProcessor rootProject.ext.dependencies['glide-compiler']
     //GreenDao数据库
     api rootProject.ext.dependencies['greendao']
     //Logcat日志格式化库
@@ -67,7 +67,7 @@ dependencies {
     api rootProject.ext.dependencies['base-adapter']
     //ButterKnife
     api rootProject.ext.dependencies['butterknife']
-    annotationProcessor rootProject.ext.dependencies['butterknife-compiler']
+//    annotationProcessor rootProject.ext.dependencies['butterknife-compiler']
     //滑动返回库
     api rootProject.ext.dependencies['swipebacklayout']
     //沉侵式库
@@ -76,5 +76,5 @@ dependencies {
     api rootProject.ext.dependencies['umeng-analytics']
     //SharedPreference对象化库
     api rootProject.ext.dependencies['smart-sp']
-    annotationProcessor rootProject.ext.dependencies['smart-sp-compiler']
+//    annotationProcessor rootProject.ext.dependencies['smart-sp-compiler']
 }

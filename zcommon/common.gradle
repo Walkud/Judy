@@ -1,0 +1,8 @@
+apply plugin: 'com.jakewharton.butterknife'
+
+dependencies {
+    annotationProcessor rootProject.ext.dependencies['butterknife-compiler']
+    annotationProcessor rootProject.ext.dependencies['permission-compiler']
+    annotationProcessor rootProject.ext.dependencies['glide-compiler']
+    annotationProcessor rootProject.ext.dependencies['smart-sp-compiler']
+}

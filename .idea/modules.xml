@@ -4,9 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BaseLib/BaseLib.iml" filepath="$PROJECT_DIR$/BaseLib/BaseLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/BaseRes/BaseRes.iml" filepath="$PROJECT_DIR$/BaseRes/BaseRes.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WalkudAndroid.iml" filepath="$PROJECT_DIR$/WalkudAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Judy.iml" filepath="$PROJECT_DIR$/Judy.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bundle_a/bundle_a.iml" filepath="$PROJECT_DIR$/bundle_a/bundle_a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/bundle_login/bundle_login.iml" filepath="$PROJECT_DIR$/module/bundle_login/bundle_login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/bundle_mine/bundle_mine.iml" filepath="$PROJECT_DIR$/module/bundle_mine/bundle_mine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/module.iml" filepath="$PROJECT_DIR$/module/module.iml" />
     </modules>
   </component>
 </project>

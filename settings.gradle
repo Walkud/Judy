@@ -1,1 +1,1 @@
-include ':app', ':BaseLib', ':BaseRes', ':bundle_a'
+include ':app', ':BaseLib', ':BaseRes',':module:bundle_login', ':module:bundle_mine'

@@ -1,0 +1,5 @@
+<resources>
+    <string name="bl_login">登录</string>
+    <string name="bl_password">密码</string>
+    <string name="bl_username">用户名</string>
+</resources>

@@ -1,16 +1,17 @@
 apply from: rootProject.file('zconfig/judy.gradle')
+apply from: rootProject.file('zcommon/common.gradle')
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion Integer.parseInt(compileSdk)
 
     defaultConfig {
         if (project.ext.appPlugin) {
-            applicationId "app.walkud.com.bundle_a"
+            applicationId "com.walkud.mine"
         }
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion Integer.parseInt(minSdk)
+        targetSdkVersion Integer.parseInt(targetSdk)
+        versionCode 1
+        versionName "1.0.0"
     }
 
     buildTypes {
@@ -24,5 +25,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':BaseRes')
+
+    implementation project(':BaseRes')
 }
